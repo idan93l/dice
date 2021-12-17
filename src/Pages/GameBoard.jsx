@@ -3,7 +3,14 @@ import Player from "../components/Player";
 import OptionsContainer from "../components/OptionsContainer.jsx";
 import "./GameBoard.css";
 
-// const banner = ['player 1 turn', 'player 1 win!', 'player 2 turn', 'player 1 win!']
+const dices = {
+  1: 'die1',
+  2: 'die2',
+  3: 'die3',
+  4: 'die4',
+  5: 'die5',
+  6: 'die6',
+}
 
 class GameBoard extends React.Component {
   constructor() {
@@ -122,6 +129,7 @@ class GameBoard extends React.Component {
     // console.log(`player1 ${this.state.player1Score}`);
     // console.log(`player2 ${this.state.player2Score}`);
     // console.log(`winPoints ${this.state.pointsToWin}`);
+    console.log(dices[this.state.die1]);
     return (
       <div className="GameBoard">
         <Player
@@ -136,8 +144,8 @@ class GameBoard extends React.Component {
           randomize={this.randomDice}
           newGame={this.newGame}
           changeTurn={this.changeTurn}
-          die1={this.state.die1}
-          die2={this.state.die2}
+          die1={dices[this.state.die1]}
+          die2={dices[this.state.die2]}
         />
         <Player
           name="player 2"
