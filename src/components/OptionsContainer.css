@@ -1,0 +1,17 @@
+.OptionsContainer {
+  height: 70vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid red
+}
+
+.container {
+  height: 15vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid red;
+}
