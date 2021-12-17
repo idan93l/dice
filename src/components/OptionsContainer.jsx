@@ -15,7 +15,6 @@ class OptionsContainer extends React.Component {
           <button onClick={this.props.randomize}>Roll Dice</button>
           <button onClick={this.props.changeTurn}>Hold</button>
           <input
-            style={{ textAlign: "center" }}
             type="text"
             placeholder="Final Score"
             onChange={this.props.winPointsUpdate}
