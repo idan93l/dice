@@ -9,6 +9,8 @@ class OptionsContainer extends React.Component {
         {/* <h1>{this.props.die1}</h1> */}
         <div className={this.props.die1}></div>
         <div className={this.props.die2}></div>
+        {/* <div className="die1"></div>
+        <div className="die1"></div> */}
         {/* <h1>{this.props.die2}</h1> */}
         <h1>{this.props.win}</h1>
         <div className="container">

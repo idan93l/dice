@@ -1,12 +1,15 @@
 .Player {
-  height: 60vh;
-  width: 25vw;
+  height: 45vh;
+  width: 23vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  border: 1px solid red
+  /* border: 1px solid red; */
+  border-radius: 20px;
+  background-color: #bd676771;
+  box-shadow: 0 0 30px 20px #bd676771;
 }
 
 .containerPlayer {
@@ -17,5 +20,5 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }

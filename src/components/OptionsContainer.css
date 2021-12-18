@@ -1,11 +1,13 @@
 .OptionsContainer {
-  height: 80vh;
+  height: 70vh;
   width: 40vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  border: 1px solid red
+  border-radius: 20px;
+  /* background-color: #bd676771; */
+  /* box-shadow: 0 0 30px 20px #bd676771; */
 }
 
 .container {
@@ -14,13 +16,22 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  border: 1px solid red;
+  /* border: 1px solid white; */
 }
 
 button {
-  font-size: 3vh;
+  font-size: 4vh;
   height: 5vh;
-  width: 20vh;
+  width: 22vh;
+  background-color: #bd6767b9;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  color: #f3df8d;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 30px 10px #bd676771;
+  font-family: "Staatliches", cursive;
 }
 
 input {
@@ -28,11 +39,31 @@ input {
   width: 20vh;
   text-align: center;
   font-size: 3vh;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 30px 10px #bd676771;
+  font-family: "Staatliches", cursive;
+  background-color: #bd6767b9;
+}
+
+input::placeholder {
+  color: #f3df8d;
+}
+
+input,
+select,
+textarea {
+  color: #f3df8d;
 }
 
 .die1 {
-  height: 100px;
-  width: 100px;
+  height: 100%;
+  width: 100%;
+  max-width: 100px;
+  max-height: 100px;
   background-image: url("../assests/dice-1.png");
   background-repeat: no-repeat;
   background-size: cover;
