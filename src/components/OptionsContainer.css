@@ -1,28 +1,28 @@
 .OptionsContainer {
   height: 70vh;
   width: 40vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 20px;
-  /* background-color: #bd676771; */
-  /* box-shadow: 0 0 30px 20px #bd676771; */
 }
 
 .container {
   height: 20vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  /* border: 1px solid white; */
+}
+
+.spice {
+  width: 16vw;
+  background-color: #df943371;
+  box-shadow: 0 0 30px 10px #df943371;
+  border-radius: 10px;
+}
+
+.dieContainer {
+  height: 24vh;
+  width: 10vw;
 }
 
 button {
-  font-size: 4vh;
-  height: 5vh;
-  width: 22vh;
+  font-size: 4vmin;
+  height: 5vmin;
+  width: 22vmin;
   background-color: #bd6767b9;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
@@ -34,11 +34,17 @@ button {
   font-family: "Staatliches", cursive;
 }
 
+button:hover, input:hover{
+  background-color: #bd6767cc;
+  box-shadow: 0 0 30px 10px #f3df8dbb;
+  transition: all 0.3s;
+}
+
 input {
-  height: 5vh;
+  height: 5vmin;
   width: 20vh;
   text-align: center;
-  font-size: 3vh;
+  font-size: 4vh;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
   border: none;
@@ -59,53 +65,53 @@ textarea {
   color: #f3df8d;
 }
 
-.die1 {
-  height: 100%;
-  width: 100%;
+.die {
   max-width: 100px;
   max-height: 100px;
-  background-image: url("../assests/dice-1.png");
+  width: 100px;
+  height: 100px;
+  background-color: #bd676771;
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: 0 0 30px 20px #bd676771;
+}
+
+.die1 {
+  background-image: url("../assests/dice-1.png");
 }
 .die2 {
-  height: 100px;
-  width: 100px;
   background-image: url("../assests/dice-2.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  box-shadow: 0 0 30px 20px #bd676771;
 }
 .die3 {
-  height: 100px;
-  width: 100px;
   background-image: url("../assests/dice-3.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  box-shadow: 0 0 30px 20px #bd676771;
 }
 .die4 {
-  height: 100px;
-  width: 100px;
   background-image: url("../assests/dice-4.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  box-shadow: 0 0 30px 20px #bd676771;
 }
 .die5 {
-  height: 100px;
-  width: 100px;
   background-image: url("../assests/dice-5.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  box-shadow: 0 0 30px 20px #bd676771;
 }
 .die6 {
-  height: 100px;
-  width: 100px;
   background-image: url("../assests/dice-6.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  box-shadow: 0 0 30px 20px #bd676771;
+}
+
+@media (max-height: 820px) {
+  .die {
+    height: 70px;
+    width: 70px;
+  }
+}
+
+@media (max-height: 610px) {
+  .die {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@media (max-height: 400px) {
+  .die {
+    height: 40px;
+    width: 40px;
+  }
 }

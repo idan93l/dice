@@ -4,8 +4,8 @@ import "./Player.css";
 class Player extends React.Component {
   render = () => {
     return (
-      <div className="Player">
-        <div className="containerPlayer">
+      <div className={`flex Player ${this.props.turnStyle} ${this.props.winnerStyle}`}>
+        <div className="flex containerPlayer">
           <h1>{this.props.name}</h1>
           <h1>score: {this.props.score}</h1>
         </div>

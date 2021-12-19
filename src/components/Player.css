@@ -1,24 +1,27 @@
 .Player {
   height: 45vh;
-  width: 23vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  /* border: 1px solid red; */
+  width: 24vw;
   border-radius: 20px;
   background-color: #bd676771;
   box-shadow: 0 0 30px 20px #bd676771;
 }
 
 .containerPlayer {
-  height: 20vh;
-  width: 15vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  /* border: 1px solid red; */
+  height: 15vh;
+  width: 16vw;
+}
+
+.glow {
+  background-color: #df943371;
+  box-shadow: 0 0 30px 10px #df943371;
+}
+
+.jump {
+  animation: jump 1s infinite alternate;
+}
+
+@keyframes jump {
+  to {
+      transform: translateY(-20px);
+  }
 }

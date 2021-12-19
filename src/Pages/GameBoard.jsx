@@ -26,6 +26,10 @@ class GameBoard extends React.Component {
       player2Score: 0,
       player1CurrentScore: 0,
       player2CurrentScore: 0,
+      turnStyle1: 'glow',
+      winnerStyle1: '',
+      turnStyle2: '',
+      winnerStyle2: '',
     };
   }
 
@@ -44,35 +48,35 @@ class GameBoard extends React.Component {
   randomDice = () => {
     let die11 = Math.ceil(Math.random() * 6);
     let die22 = Math.ceil(Math.random() * 6);
-    // let winPoints = this.state.pointsToWin;
-    // let die11 = 6;
-    // let die22 = 6;
     this.setState({ die1: die11 });
     this.setState({ die2: die22 });
     this.updateScore(die11, die22);
     this.updateCurrentScore(die11, die22);
     this.badScores(die11, die22);
-    // this.turnOrWin(winPoints);
   };
 
   turnOrWin = (winPoints) => {
     if (this.state.player1Turn) {
       if (this.state.player1CurrentScore >= winPoints) {
         this.setState({ banner: "Player 1 Wins!" });
+        this.setState({ winnerStyle1: 'jump' });
       } else {
         this.setState({ banner: "Player 1 turn" });
+        this.setState({ winnerStyle1: '' });
       }
     } else {
       if (this.state.player2CurrentScore >= winPoints) {
         this.setState({ banner: "Player 2 Wins!" });
+        this.setState({ winnerStyle2: 'jump' });
       } else {
         this.setState({ banner: "Player 2 turn" });
+        this.setState({ winnerStyle2: '' });
       }
     }
   };
 
   badScores = (die1, die2) => {
-    if (die1 === 6 && die2 === 6) {
+    if (die1 === die2) {
       if (this.state.player1Turn) {
         this.setState({ player1Score: 0 });
         this.setState({ player1CurrentScore: 0 });
@@ -84,7 +88,7 @@ class GameBoard extends React.Component {
   };
 
   updateCurrentScore = (die1, die2) => {
-    if (this.state.player1Turn && die1 + die2 !== 6) {
+    if (this.state.player1Turn) {
       this.setState(
         (prevstate) => ({
           player1CurrentScore: prevstate.player1CurrentScore + die1 + die2,
@@ -106,36 +110,41 @@ class GameBoard extends React.Component {
       this.setState({ player1Turn: false });
       this.setState({ player2Turn: true });
       this.setState({ banner: "Player 2 turn" });
+      this.setState({ turnStyle1: "" })
+      this.setState({ turnStyle2: "glow" })
     } else {
       this.setState({ player1Turn: true });
       this.setState({ player2Turn: false });
       this.setState({ banner: "Player 1 turn" });
+      this.setState({ turnStyle1: "glow" })
+      this.setState({ turnStyle2: "" })
     }
   };
 
   newGame = () => {
     this.setState({ die1: null });
     this.setState({ die2: null });
-    this.setState({ playersTurn: 0 });
+    this.setState({ player1Turn: true })
+    this.setState({ player2Turn: false })
     this.setState({ banner: "Ready?" });
     this.setState({ player1Score: 0 });
     this.setState({ player2Score: 0 });
     this.setState({ player1CurrentScore: 0 });
     this.setState({ player2CurrentScore: 0 });
+    this.setState({ winnerStyle1: '' })
+    this.setState({ winnerStyle2: '' })
   };
 
   render = () => {
-    // console.log(this.state.die1);
-    // console.log(`player1 ${this.state.player1Score}`);
-    // console.log(`player2 ${this.state.player2Score}`);
-    // console.log(`winPoints ${this.state.pointsToWin}`);
     console.log(dices[this.state.die1]);
     return (
-      <div className="GameBoard">
+      <div className="flex GameBoard">
         <Player
           name="player 1"
           score={this.state.player1Score}
           currentScore={this.state.player1CurrentScore}
+          turnStyle={this.state.turnStyle1}
+          winnerStyle={this.state.winnerStyle1}
         />
         <OptionsContainer
           winPointsUpdate={this.winPoints}
@@ -151,6 +160,8 @@ class GameBoard extends React.Component {
           name="player 2"
           score={this.state.player2Score}
           currentScore={this.state.player2CurrentScore}
+          turnStyle={this.state.turnStyle2}
+          winnerStyle={this.state.winnerStyle2}
         />
       </div>
     );
