@@ -85,9 +85,17 @@ class GameBoard extends React.Component {
       if (this.state.player1Turn) {
         this.setState({ player1Score: 0 });
         this.setState({ player1CurrentScore: 0 });
+        this.setState({player1Turn: false});
+        this.setState({player2Turn: true});
+        this.setState({turnStyle1: ""});
+        this.setState({turnStyle2: "glow"});
       } else {
         this.setState({ player2Score: 0 });
         this.setState({ player2CurrentScore: 0 });
+        this.setState({player1Turn: true});
+        this.setState({player2Turn: false});
+        this.setState({turnStyle1: "glow"});
+        this.setState({turnStyle2: ""});
       }
     }
   };
