@@ -136,6 +136,8 @@ class GameBoard extends React.Component {
     this.setState({ player2Score: 0 });
     this.setState({ player1CurrentScore: 0 });
     this.setState({ player2CurrentScore: 0 });
+    this.setState({ turnStyle1: "glow" })
+    this.setState({ turnStyle2: "" })
     this.setState({ winnerStyle1: '' })
     this.setState({ winnerStyle2: '' })
     this.setState({ disableButton: false })
