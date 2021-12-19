@@ -14,8 +14,8 @@ class OptionsContainer extends React.Component {
         <h1>{this.props.win}</h1>
         </div>
         <div className="flex container">
-          <button onClick={this.props.randomize}>Roll Dice</button>
-          <button onClick={this.props.changeTurn}>Hold</button>
+          <button disabled={this.props.disable} onClick={this.props.randomize}>Roll Dice</button>
+          <button disabled={this.props.disable} onClick={this.props.changeTurn}>Hold</button>
           <input
             type="text"
             placeholder="Final Score"

@@ -30,6 +30,7 @@ class GameBoard extends React.Component {
       winnerStyle1: '',
       turnStyle2: '',
       winnerStyle2: '',
+      disableButton: false
     };
   }
 
@@ -60,17 +61,21 @@ class GameBoard extends React.Component {
       if (this.state.player1CurrentScore >= winPoints) {
         this.setState({ banner: "Player 1 Wins!" });
         this.setState({ winnerStyle1: 'jump' });
+        this.setState({ disableButton: true })
       } else {
         this.setState({ banner: "Player 1 turn" });
         this.setState({ winnerStyle1: '' });
+        this.setState({ disableButton: false })
       }
     } else {
       if (this.state.player2CurrentScore >= winPoints) {
         this.setState({ banner: "Player 2 Wins!" });
         this.setState({ winnerStyle2: 'jump' });
+        this.setState({ disableButton: true })
       } else {
         this.setState({ banner: "Player 2 turn" });
         this.setState({ winnerStyle2: '' });
+        this.setState({ disableButton: false })
       }
     }
   };
@@ -133,10 +138,10 @@ class GameBoard extends React.Component {
     this.setState({ player2CurrentScore: 0 });
     this.setState({ winnerStyle1: '' })
     this.setState({ winnerStyle2: '' })
+    this.setState({ disableButton: false })
   };
 
   render = () => {
-    console.log(dices[this.state.die1]);
     return (
       <div className="flex GameBoard">
         <Player
@@ -148,13 +153,13 @@ class GameBoard extends React.Component {
         />
         <OptionsContainer
           winPointsUpdate={this.winPoints}
-          // inputValue={this.state.pointsToWin}
           win={this.state.banner}
           randomize={this.randomDice}
           newGame={this.newGame}
           changeTurn={this.changeTurn}
           die1={dices[this.state.die1]}
           die2={dices[this.state.die2]}
+          disable={this.state.disableButton}
         />
         <Player
           name="player 2"
